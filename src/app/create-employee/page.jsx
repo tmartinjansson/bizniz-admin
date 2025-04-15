@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
+import { API_BASE_URL } from "@/utils/api";
 
 export default function CreateEmployeePage() {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ export default function CreateEmployeePage() {
     const fetchCompanies = async () => {
       try {
           setLoading(true);
-          const res = await fetch("http://localhost:5000/api/companies");
+          const res = await fetch(`${API_BASE_URL}/api/companies`);
           const data = await res.json();
 
           if (res.ok) {
@@ -66,7 +67,7 @@ export default function CreateEmployeePage() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/employees", {
+      const res = await fetch(`${API_BASE_URL}/api/employees`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)

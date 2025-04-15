@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
+import { API_BASE_URL } from "@/utils/api";
 
 export default function ManageCompanyPage() {
   const [companies, setCompanies] = useState([]);
@@ -25,7 +26,7 @@ export default function ManageCompanyPage() {
   const fetchCompanies = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/companies");
+      const res = await fetch(`${API_BASE_URL}/api/companies`);
       const data = await res.json();
       
       if (res.ok) {
@@ -73,7 +74,7 @@ export default function ManageCompanyPage() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:5000/api/companies/${editingCompany._id}`, {
+      const res = await fetch(`${API_BASE_URL}/api/companies/${editingCompany._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
@@ -105,7 +106,7 @@ export default function ManageCompanyPage() {
   const handleDelete = async (id) => {
     if (confirm("Are you sure you want to delete this company?")) {
       try {
-        const res = await fetch(`http://localhost:5000/api/companies/${id}`, {
+        const res = await fetch(`${API_BASE_URL}/api/companies/${id}`, {
           method: "DELETE"
         });
 

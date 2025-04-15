@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./page.module.css";
+import { API_BASE_URL } from "@/utils/api";
 
 export default function CreateCompanyPage() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ export default function CreateCompanyPage() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/companies", {
+      const res = await fetch(`${API_BASE_URL}/api/companies` , {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)

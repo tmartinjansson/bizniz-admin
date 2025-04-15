@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
+import { API_BASE_URL } from "@/utils/api";
 
 export default function ManageEmployeePage() {
   const [employees, setEmployees] = useState([]);
@@ -27,7 +28,7 @@ export default function ManageEmployeePage() {
   const fetchEmployees = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/employees");
+      const res = await fetch(`${API_BASE_URL}/api/employees`);
       const data = await res.json();
 
       if (res.ok) {
@@ -45,7 +46,7 @@ export default function ManageEmployeePage() {
   // Function to fetch all companies
   const fetchCompanies = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/companies");
+      const res = await fetch(`${API_BASE_URL}/api/companies`);
       const data = await res.json();
 
       if (res.ok) {
@@ -90,7 +91,7 @@ export default function ManageEmployeePage() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:5000/api/employees/${editingEmployee._id}`, {
+      const res = await fetch(`${API_BASE_URL}/api/employees/${editingEmployee._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
@@ -129,7 +130,7 @@ export default function ManageEmployeePage() {
   const handleDelete = async (id) => {
     if (confirm("Are you sure you want to delete this employee?")) {
       try {
-        const res = await fetch(`http://localhost:5000/api/employees/${id}`, {
+        const res = await fetch(`${API_BASE_URL}/api/employees/${id}`, {
           method: "DELETE"
         });
 
