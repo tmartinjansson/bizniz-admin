@@ -1,0 +1,168 @@
+.container {
+    padding: 2rem;
+  }
+  
+  .pageTitle {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .errorMessage,
+  .responseMessage {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+  
+  .errorMessage {
+    background-color: #fff1f0;
+    color: #cf1322;
+    border: 1px solid #ffa39e;
+  }
+  
+  .responseMessage {
+    background-color: #f6ffed;
+    color: #389e0d;
+    border: 1px solid #b7eb8f;
+  }
+  
+  .companyTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .companyTable th,
+  .companyTable td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .companyTable th {
+    background-color: #e0e7d2;
+    font-weight: bold;
+  }
+  
+  .companyTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .editButton,
+  .deleteButton,
+  .clearButton,
+  .updateButton,
+  .cancelButton {
+    padding: 0.4rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+  
+  .editButton {
+    background-color: #4a8dda;
+    color: white;
+  }
+  
+  .deleteButton {
+    background-color: #e25c5c;
+    color: white;
+  }
+  
+  .clearButton {
+    background-color: #f0f0f0;
+    color: #666;
+    margin-left: 0.5rem;
+  }
+
+  .updateButton,
+.cancelButton {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+  
+  .updateButton {
+    background-color: #e0e7d2;
+    color: rgb(43, 36, 36);
+  }
+
+  .updateButton:hover {
+    color: #7d9651;
+  }
+  
+  .cancelButton {
+    background-color: #9e9e9e;
+    color: white;
+   
+  }
+  
+  .cancelButton:hover {
+    background-color: #7d7d7d;
+  }
+
+  .formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .formGroup label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .fieldWithAction {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fieldWithAction input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    font-family: "Segoe UI", sans-serif;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+  }
+  
+  .fieldWithAction input:focus {
+    border-color: #7d9651;
+    outline: none;
+  }
+  
+  .formActions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .editForm {
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+  }
+  
+  .editForm h3 {
+    margin-bottom: 1rem;
+    color: #333;
+  }

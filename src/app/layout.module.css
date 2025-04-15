@@ -1,0 +1,25 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  padding-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Optional mobile tweaks */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+    padding-top: 70px; /* Adjust for mobile if needed */
+    }
+    }

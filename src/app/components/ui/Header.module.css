@@ -1,0 +1,165 @@
+.header {
+  position: fixed; /* Fixed position at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 0.8rem 1.1rem 0.6rem 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align everything to the left */
+  z-index: 1000; /* Ensure header stays above other content */
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  background-color: #7d9651;
+  z-index: -1;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background-color: #e0e7d2;
+  z-index: -1; 
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(43, 36, 36);
+  margin-top: 0.6rem; /* Move the title down a bit */
+  margin-bottom: 0.4rem;
+}
+
+/* Nav container holds links */
+.navContainer {
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 0.4rem;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  justify-content: flex-start; /* Align to the left */
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+.navLinks li a {
+  color: rgb(37, 36, 43);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLinks li a:hover {
+  color: #7d9651;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.activeLink {
+  color: #7d9651;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Add padding to main content to prevent it from being hidden behind fixed header */
+/*:global(main) {/*
+  padding-top: 7.5rem; /* Adjust based on your header height */
+/*}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    padding-bottom: 1rem; /* Additional padding for mobile */
+  }
+  
+  .navLinks {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 0.7rem 1.5rem;
+  }
+  
+  /* Specific placement for nav items */
+  .navLinks li:nth-child(1) { /* Main link */
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: flex-end;
+  }
+  
+  .navLinks li:nth-child(2), /* Create New Company */
+  .navLinks li:nth-child(3) { /* Manage Company Data */
+    grid-row: 2;
+  }
+  
+  .navLinks li:nth-child(4), /* Create Employee */
+  .navLinks li:nth-child(5) { /* Manage Employee Data */
+    grid-row: 3;
+  }
+  
+  .navLinks li:nth-child(2),
+  .navLinks li:nth-child(4) {
+    grid-column: 1;
+  }
+  
+  .navLinks li:nth-child(3),
+  .navLinks li:nth-child(5) {
+    grid-column: 2;
+  }
+  
+  /* Adjust logo positioning for mobile */
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+/* For very small screens, make links full width */
+@media (max-width: 480px) {
+  .navLinks {
+    grid-template-columns: 1fr;
+  }
+  
+  .navLinks li {
+    grid-column: 1 !important;
+  }
+  
+  .navLinks li:nth-child(1) {
+    grid-row: 1;
+    justify-self: flex-start;
+  }
+  
+  .navLinks li:nth-child(2) {
+    grid-row: 2;
+  }
+  
+  .navLinks li:nth-child(3) {
+    grid-row: 3;
+  }
+  
+  .navLinks li:nth-child(4) {
+    grid-row: 4;
+  }
+  
+  .navLinks li:nth-child(5) {
+    grid-row: 5;
+  }
+}

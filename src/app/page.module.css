@@ -1,0 +1,57 @@
+  /* Container styles */
+  .container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .pageTitle {
+  margin-bottom: 2rem;
+  color: #333;
+  }
+
+  .page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    color: #000000;
+    display: block;
+  }
+
+  .formGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; /* Increased gap between form items */
+    box-sizing: border-box;
+  }
+
+  .formGroup {
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .formGroup label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+  }
+
+  .fieldWithAction {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .fieldWithAction input, .fieldWithAction select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  }

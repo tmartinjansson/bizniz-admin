@@ -1,0 +1,78 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Changed from 5 to 3 columns */
+  gap: 1.5rem; /* Increased gap for better spacing */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0; /* Allows shrinking if needed */
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 0.3rem;
+}
+
+.formGroup input {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  font-family: "Segoe UI", sans-serif;
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.formGroup input:focus {
+  border-color: #7d9651;
+  outline: none;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  background-color: #e0e7d2;
+  color: rgb(27, 26, 26);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.submitBtn:hover {
+  background-color: #7d9651;
+  color: white;
+}
+
+.responseMessage {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
