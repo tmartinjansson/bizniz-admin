@@ -22,24 +22,30 @@ export default function ManageCompanyPage() {
     fetchCompanies();
   }, []);
 
-  // Function to fetch all companies
-  const fetchCompanies = async () => {
-    try {
-      setLoading(true);
-      const res = await fetch(`${API_BASE_URL}/api/companies`);
-      const data = await res.json();
-      
-      if (res.ok) {
-        setCompanies(data);
-      } else {
-        setError("Failed to fetch companies");
-      }
-    } catch (err) {
-      setError("Error: " + err.message);
-    } finally {
-      setLoading(false);
+ // Function to fetch all companies
+ const fetchCompanies = async () => {
+  try {
+    setLoading(true);
+    const res = await fetch(`${API_BASE_URL}/api/companies`);
+    const data = await res.json();
+    
+    // For debugging
+    console.log("API Response:", data);
+    
+    if (res.ok) {
+      // Extract companies array from the response
+      const companiesArray = data.companies || [];
+      setCompanies(companiesArray);
+    } else {
+      setError("Failed to fetch companies: " + (data.message || "Unknown error"));
     }
-  };
+  } catch (err) {
+    console.error("Error fetching companies:", err);
+    setError("Error: " + err.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   // Set the current company to edit
   const handleEdit = (company) => {
