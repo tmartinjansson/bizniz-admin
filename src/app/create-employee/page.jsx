@@ -53,6 +53,12 @@ export default function CreateEmployeePage() {
           companiesArray = [data];
         }
 
+        // Ensure companiesArray is definitely an array
+        if (!Array.isArray(companiesArray)) {
+          console.error("Companies data is not an array:", companiesArray);
+          companiesArray = [];
+        }
+
         if (res.ok) {
           setCompanies(companiesArray);
           // Set default company if any exist
@@ -277,11 +283,11 @@ export default function CreateEmployeePage() {
                 className={styles.select}
               >
                 <option value="" disabled>Select a company</option>
-                {companies.map((company) => (
+                {Array.isArray(companies) ? companies.map((company) => (
                   <option key={company._id} value={company._id}>
                     {company.name}
                   </option>
-                ))}
+                )) : <option value="">No companies available</option>}
               </select>
             )}
           </div>
